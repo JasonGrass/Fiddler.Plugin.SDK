@@ -6,7 +6,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Jgrass.FiddlerPlugin.Api\Jgrass.FiddlerPlugin.csproj" />
+      <ProjectReference Include="..\Jgrass.FiddlerPlugin\Jgrass.FiddlerPlugin.csproj" />
     </ItemGroup>
 
     <ItemGroup>
