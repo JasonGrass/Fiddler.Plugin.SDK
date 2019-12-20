@@ -9,6 +9,8 @@
         <Owners>Jasongrass</Owners>
         <Version>1.0.0</Version>
         <Description>Fiddler Plugin SDK</Description>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/JasonGrass/Fiddler.Plugin.SDK</RepositoryUrl>
     </PropertyGroup>
 
     <ItemGroup>
