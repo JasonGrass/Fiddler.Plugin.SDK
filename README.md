@@ -8,6 +8,9 @@ Fiddler 插件使用 .net 环境开发，默认 UI 的支持是 WinForm，可以
 
 ## 如何使用
 
+Nuget Package:
+[https://www.nuget.org/packages/Jgrass.FiddlerPlugin](https://www.nuget.org/packages/Jgrass.FiddlerPlugin)
+
 代码可参考项目中的 Demo.
 
 * 1 继承 FiddlerPluginApplication，实现 GetFiddlerViewProvider 方法。
