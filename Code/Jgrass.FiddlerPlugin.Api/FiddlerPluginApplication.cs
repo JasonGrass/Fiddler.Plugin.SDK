@@ -5,20 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Fiddler;
 
-// Fiddler 最低版本要求
-[assembly: RequiredVersion("2.1.8.1")]
-
 namespace Jgrass.FiddlerPlugin
 {
     /// <summary>
     /// Fiddler 插件应用的入口
     /// </summary>
-    public class FiddlerPluginApplication
+    public abstract class FiddlerPluginApplication : IAutoTamper3
     {
         public virtual void OnLoad()
         {
-            System.Windows.MessageBox.Show("Jgrass.FiddlerPlugin OnLoad");
-
             var viewProvider = GetFiddlerViewProvider();
             if (viewProvider != null)
             {
@@ -26,10 +21,7 @@ namespace Jgrass.FiddlerPlugin
             }
         }
 
-        public virtual IFiddlerViewProvider GetFiddlerViewProvider()
-        {
-            return null;
-        }
+        public abstract IFiddlerViewProvider GetFiddlerViewProvider();
 
         public virtual void OnBeforeUnload()
         {

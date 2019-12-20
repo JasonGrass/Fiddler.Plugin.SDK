@@ -45,8 +45,8 @@ namespace Jgrass.FiddlerPlugin
         void IFiddlerLayout.OnTabViewSizeChanged(Size size)
         {
             // 更新此 Host 的尺寸。
-            this.Width = this.Parent.Width;
-            this.Height = this.Parent.Height;
+            this.Width = size.Width;
+            this.Height = size.Height;
         }
 
     }

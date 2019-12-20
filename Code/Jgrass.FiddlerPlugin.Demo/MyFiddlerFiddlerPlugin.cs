@@ -5,53 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using Fiddler;
 
+// is required
+[assembly: RequiredVersion("2.1.8.1")]
+
 namespace Jgrass.FiddlerPlugin.Demo
 {
-    public class MyFiddlerFiddlerPlugin : IAutoTamper3
+    public class MyFiddlerFiddlerPlugin : FiddlerPluginApplication
     {
-        public void OnLoad()
+        public override void OnLoad()
         {
-            System.Windows.MessageBox.Show("Jgrass.FiddlerPlugin.Demo OnLoad");
+            FiddlerApplication.Log.LogString("Load MyFiddlerFiddlerPlugin");
+
+            // base.OnLoad() is required
+            base.OnLoad();
         }
 
-        public void OnBeforeUnload()
+        public override IFiddlerViewProvider GetFiddlerViewProvider()
         {
+            return new MyFiddlerViewProvider();
         }
 
-        public IFiddlerViewProvider GetFiddlerViewProvider()
+        public override void AutoTamperRequestAfter(Session oSession)
         {
-            return null;
-            // return new MyFiddlerViewProvider();
-        }
-
-        public void AutoTamperRequestBefore(Session oSession)
-        {
-        }
-
-        public void AutoTamperRequestAfter(Session oSession)
-        {
-            // if you want to use other fiddler api, should add reference of "Fiddler.exe" for this project.
-            FiddlerApplication.Log.LogString("Build MyFiddlerViewProvider");
-        }
-
-        public void AutoTamperResponseBefore(Session oSession)
-        {
-        }
-
-        public void AutoTamperResponseAfter(Session oSession)
-        {
-        }
-
-        public void OnBeforeReturningError(Session oSession)
-        {
-        }
-
-        public void OnPeekAtResponseHeaders(Session oSession)
-        {
-        }
-
-        public void OnPeekAtRequestHeaders(Session oSession)
-        {
+            // do your work 
         }
     }
 }

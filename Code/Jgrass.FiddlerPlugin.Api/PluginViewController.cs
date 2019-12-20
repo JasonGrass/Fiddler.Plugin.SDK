@@ -34,6 +34,7 @@ namespace Jgrass.FiddlerPlugin
             {
                 InsertWinFormTabPage(tabPage, fiddlerTabPage.WinFormUserControl);
             }
+
             UpdateViewSize();
         }
 
@@ -48,7 +49,6 @@ namespace Jgrass.FiddlerPlugin
             {
                 FiddlerLayoutViews.Add(layout);
             }
-
         }
 
         private static void InsertWPFTabPage(System.Windows.Forms.TabPage tabPage, System.Windows.Controls.UserControl userControl)
