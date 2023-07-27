@@ -22,12 +22,18 @@ namespace Jgrass.FiddlerPlugin
         /// <summary>
         /// 获取 Fiddler Tab 标签页内的 UserControl。
         /// </summary>
-        public System.Windows.Forms.UserControl WinFormUserControl { get; }
+        public System.Windows.Forms.UserControl? WinFormUserControl { get; }
 
         /// <summary>
         /// 获取 Fiddler Tab 标签页内的 UserControl。
         /// </summary>
-        public System.Windows.Controls.UserControl WPFUserControl { get; }
+        public System.Windows.Controls.UserControl? WPFUserControl { get; }
+
+        /// <summary>
+        /// 对 WPF 容器进行自定义的设置。通常是样式的重置。
+        /// 仅在使用 WPF 类型的控件时有效。
+        /// </summary>
+        public Action<System.Windows.Forms.UserControl>? WPFHostSetter { get; set; }
 
         public FiddlerTabPage(string tabTitle, System.Windows.Forms.UserControl winFormUserControl)
         {

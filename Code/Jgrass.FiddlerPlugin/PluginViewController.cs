@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace Jgrass.FiddlerPlugin
 
             if (fiddlerTabPage.WPFUserControl != null)
             {
-                InsertWPFTabPage(tabPage, fiddlerTabPage.WPFUserControl);
+                InsertWPFTabPage(tabPage, fiddlerTabPage.WPFUserControl, fiddlerTabPage.WPFHostSetter);
             }
             else if (fiddlerTabPage.WinFormUserControl != null)
             {
@@ -38,7 +39,9 @@ namespace Jgrass.FiddlerPlugin
             UpdateViewSize();
         }
 
-        private static void InsertWinFormTabPage(System.Windows.Forms.TabPage tabPage, System.Windows.Forms.UserControl userControl)
+        private static void InsertWinFormTabPage(
+            System.Windows.Forms.TabPage tabPage, 
+            System.Windows.Forms.UserControl userControl)
         {
             // add view to tab 
             tabPage.Controls.Add(userControl);
@@ -51,10 +54,21 @@ namespace Jgrass.FiddlerPlugin
             }
         }
 
-        private static void InsertWPFTabPage(System.Windows.Forms.TabPage tabPage, System.Windows.Controls.UserControl userControl)
+        private static void InsertWPFTabPage(
+            System.Windows.Forms.TabPage tabPage, 
+            System.Windows.Controls.UserControl userControl,
+            Action<System.Windows.Forms.UserControl>? setter)
         {
             // new WinForm Host
             var host = new FiddlerWPFHost();
+
+            // 默认样式
+            host.BackColor = Color.White;
+            host.Padding = Padding.Empty;
+            host.Margin = Padding.Empty;
+
+            setter?.Invoke(host);
+
             // add view to host
             host.AddWpfUIElement(userControl);
             // add host to tab 

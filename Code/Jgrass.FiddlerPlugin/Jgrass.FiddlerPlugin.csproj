@@ -5,6 +5,8 @@
     <RootNamespace>Jgrass.FiddlerPlugin</RootNamespace>
     <AssemblyName>Jgrass.FiddlerPlugin</AssemblyName>
     <TargetFramework>net48</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
     <Authors>Jasongrass</Authors>
     <Owners>Jasongrass</Owners>
     <Version>2.0.0</Version>
