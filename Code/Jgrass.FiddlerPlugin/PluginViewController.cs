@@ -64,8 +64,8 @@ namespace Jgrass.FiddlerPlugin
 
             // 默认样式
             host.BackColor = Color.White;
-            host.Padding = Padding.Empty;
-            host.Margin = Padding.Empty;
+            host.Padding = System.Windows.Forms.Padding.Empty;
+            host.Margin = System.Windows.Forms.Padding.Empty;
 
             setter?.Invoke(host);
 
