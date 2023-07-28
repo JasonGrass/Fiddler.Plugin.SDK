@@ -4,7 +4,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>Jgrass.FiddlerPlugin</RootNamespace>
     <AssemblyName>Jgrass.FiddlerPlugin</AssemblyName>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net481</TargetFrameworks>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <Authors>Jasongrass</Authors>
